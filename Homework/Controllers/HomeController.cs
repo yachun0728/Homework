@@ -52,7 +52,7 @@ namespace Homework.Controllers
                 Date = DateTime.Now.Date,
                 Description = "賣筆"
             });
-
+            //888
             return View(moneyList);
         }
     }
