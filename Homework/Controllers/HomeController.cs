@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using Homework.Enums;
 using Homework.Models;
 
 namespace Homework.Controllers
@@ -29,10 +30,15 @@ namespace Homework.Controllers
 
         public ActionResult List()
         {
-            var moneyList = new List<MoneyList>();
-            int number = 1;
-
+            var skillTreeHomeworkEntities = new SkillTreeHomeworkEntities();
             
+            var moneyList = skillTreeHomeworkEntities.AccountBook.Take(10).Select(a => new MoneyList()
+            {
+                Category = (Category)a.Categoryyy,
+                Money = a.Amounttt,
+                Date = a.Dateee
+            }).ToList();
+
             //moneyList.Add(new MoneyList()
             //{
             //    Category="支出",
@@ -56,9 +62,10 @@ namespace Homework.Controllers
             //    Date = DateTime.Now.Date,
             //    Description = "賣筆"
             //});
-            foreach (var count in moneyList)
+            int number = 1;
+            foreach (var mm in moneyList)
             {
-                count.Number = number;
+                mm.Number = number;
                 ++number;
             }
             //888
