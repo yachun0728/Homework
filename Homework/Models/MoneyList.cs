@@ -8,5 +8,6 @@ namespace Homework.Models
         public decimal Money { get; set; }
         public DateTime Date { get; set; }
         public string Description { get; set; }
+        public int Number { get; set; }
     }
 }
