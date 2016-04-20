@@ -25,23 +25,12 @@
     {
         foreach (var item in Model)
         {
-            string category;
-
-            switch (item.Category)
-            {
-                case Category.Expend:
-                    category = "支出";
-                    break;
-                default:
-                    category = "收入";
-                    break;
-            }
              <tr>
                  <td>
                      @Html.DisplayFor(modelItem => item.Number)
                  </td>
                  <td>
-                     @Html.DisplayFor(modelItem => category)
+                     @Html.DisplayFor(modelItem => item.Category)
                  </td>
                  <td>
                      @Html.DisplayFor(modelItem => item.Money)

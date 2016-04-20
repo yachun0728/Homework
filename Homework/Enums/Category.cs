@@ -1,8 +1,14 @@
-﻿namespace Homework.Enums
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+
+namespace Homework.Enums
 {
     public enum Category
     {
-        Expend = 0,
-        Include
+        [Description("支出")]
+        支出 = 0,
+
+        [Description("收入")]
+        收入
     }
 }
