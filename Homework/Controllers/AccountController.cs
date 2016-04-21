@@ -15,8 +15,8 @@ namespace Homework.Controllers
     [Authorize]
     public class AccountController : Controller
     {
-        private ApplicationSignInManager _signInManager;
-        private ApplicationUserManager _userManager;
+        private ApplicationSignInManager _SignInManager;
+        private ApplicationUserManager _UserManager;
 
         public AccountController()
         {
@@ -32,11 +32,11 @@ namespace Homework.Controllers
         {
             get
             {
-                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+                return _SignInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
             private set 
             { 
-                _signInManager = value; 
+                _SignInManager = value; 
             }
         }
 
@@ -44,11 +44,11 @@ namespace Homework.Controllers
         {
             get
             {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                return _UserManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
             }
             private set
             {
-                _userManager = value;
+                _UserManager = value;
             }
         }
 
@@ -127,7 +127,6 @@ namespace Homework.Controllers
                     return RedirectToLocal(model.ReturnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
-                case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid code.");
                     return View(model);
@@ -407,16 +406,16 @@ namespace Homework.Controllers
         {
             if (disposing)
             {
-                if (_userManager != null)
+                if (_UserManager != null)
                 {
-                    _userManager.Dispose();
-                    _userManager = null;
+                    _UserManager.Dispose();
+                    _UserManager = null;
                 }
 
-                if (_signInManager != null)
+                if (_SignInManager != null)
                 {
-                    _signInManager.Dispose();
-                    _signInManager = null;
+                    _SignInManager.Dispose();
+                    _SignInManager = null;
                 }
             }
 

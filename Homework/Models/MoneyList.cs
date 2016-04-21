@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using Homework.Enums;
 
 namespace Homework.Models
 {
