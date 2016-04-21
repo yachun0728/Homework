@@ -204,6 +204,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="helper\EnumHelper.cs" />
     <Compile Include="Models\AccountBook.cs">
       <DependentUpon>SkillTreeHomework.tt</DependentUpon>
     </Compile>
@@ -211,6 +212,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MoneyList.cs" />
+    <Compile Include="Models\MoneyListDisplayModel.cs" />
     <Compile Include="Models\SkillTreeHomework.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

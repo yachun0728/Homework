@@ -1,15 +1,17 @@
 ﻿using System;
-using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Reflection;
 using System.Web.Mvc;
 using Homework.Enums;
+using Homework.helper;
 using Homework.Models;
 
 namespace Homework.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly EnumHelper _EnumHelper = new EnumHelper();
+
         public ActionResult Index()
         {
             return View();
@@ -34,37 +36,20 @@ namespace Homework.Controllers
             var skillTreeHomeworkEntities = new SkillTreeHomeworkEntities();
             int number = 1;
 
-            var moneyList = skillTreeHomeworkEntities.AccountBook.Take(10).Select(a => new MoneyList()
-            {
-                CategoryEnum = (Category)a.Categoryyy,
+            var moneyList = skillTreeHomeworkEntities.AccountBook.Take(10).Select(a => new MoneyListDisplayModel()            {
+                CategoryDispaly = a.Categoryyy,
                 Money = a.Amounttt,
                 Date = a.Dateee
             }).ToList();
             
             foreach (var mm in moneyList)
             {
-                mm.Category = GetEnumDescription(mm.CategoryEnum);
+                mm.Category = _EnumHelper.GetEnumDisplayName((Category) mm.CategoryDispaly);
                 mm.Number = number;
                 ++number;
             }
             //888
             return View(moneyList);
-        }
-
-        private string GetEnumDescription(Enum value)
-        {
-            FieldInfo fi = value.GetType().GetField(value.ToString());
-
-            DescriptionAttribute[] attributes =
-                (DescriptionAttribute[])fi.GetCustomAttributes(
-                typeof(DescriptionAttribute),
-                false);
-
-            if (attributes != null &&
-                attributes.Length > 0)
-                return attributes[0].Description;
-
-            return value.ToString();
         }
     }
 }

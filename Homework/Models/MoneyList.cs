@@ -15,6 +15,5 @@ namespace Homework.Models
         public DateTime Date { get; set; }
         public string Description { get; set; }
         public int Number { get; set; }
-        public Category CategoryEnum { get; set; }
     }
 }
