@@ -33,16 +33,16 @@
           <Property Name="Dateee" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Remarkkk" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="SkillTreeHomeworkEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="AccountBook" EntityType="Self.AccountBook" />
+        <EntityContainer Name="SkillTreeHomeworkEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AccountBooks" EntityType="Self.AccountBook" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SkillTreeHomeworkModelStoreContainer" CdmEntityContainer="SkillTreeHomeworkEntities">
-          <EntitySetMapping Name="AccountBook">
+        <EntityContainerMapping StorageEntityContainer="SkillTreeHomeworkModelStoreContainer" CdmEntityContainer="SkillTreeHomeworkEntities1">
+          <EntitySetMapping Name="AccountBooks">
             <EntityTypeMapping TypeName="SkillTreeHomeworkModel.AccountBook">
               <MappingFragment StoreEntitySet="AccountBook">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -67,7 +67,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

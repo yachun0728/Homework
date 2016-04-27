@@ -77,6 +77,6 @@ D:\skilltreeMVC\Homework\Homework\Homework\bin\Microsoft.Owin.Security.OAuth.xml
 D:\skilltreeMVC\Homework\Homework\Homework\bin\Microsoft.Owin.Security.Google.xml
 D:\skilltreeMVC\Homework\Homework\Homework\bin\Microsoft.Owin.Security.Twitter.xml
 D:\skilltreeMVC\Homework\Homework\Homework\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\skilltreeMVC\Homework\Homework\Homework\obj\Debug\Homework.csprojResolveAssemblyReference.cache
 D:\skilltreeMVC\Homework\Homework\Homework\obj\Debug\Homework.dll
 D:\skilltreeMVC\Homework\Homework\Homework\obj\Debug\Homework.pdb
+D:\skilltreeMVC\Homework\Homework\Homework\obj\Debug\Homework.csprojResolveAssemblyReference.cache

@@ -13,10 +13,10 @@ namespace Homework.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SkillTreeHomeworkEntities : DbContext
+    public partial class SkillTreeHomeworkEntities1 : DbContext
     {
-        public SkillTreeHomeworkEntities()
-            : base("name=SkillTreeHomeworkEntities")
+        public SkillTreeHomeworkEntities1()
+            : base("name=SkillTreeHomeworkEntities1")
         {
         }
     
@@ -25,6 +25,6 @@ namespace Homework.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<AccountBook> AccountBook { get; set; }
+        public virtual DbSet<AccountBook> AccountBooks { get; set; }
     }
 }

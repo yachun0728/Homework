@@ -2,6 +2,6 @@
 {
     public class MoneyListDisplayModel : MoneyList
     {
-        public int CategoryDispaly { get; set; }
+        public int CategoryDisplay { get; set; }
     }
 }
