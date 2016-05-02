@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Homework.Controllers
 {
+    [Authorize(Users = "vip@test.com")]
     public class EditController : Controller
     {
         // GET: Edit
