@@ -39,6 +39,10 @@
         </div>
         <div class="form-group">
             <div class="col-sm-offset-8 col-sm-4">
+                @if (HttpContext.Current.User.Identity.Name == "vip@test.com")
+                {
+                    @Html.Action("EditButton")
+                }
                 <button type="submit" value="Index" class="btn btn-default">送出</button>
             </div>
         </div>

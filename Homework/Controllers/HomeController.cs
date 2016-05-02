@@ -7,6 +7,7 @@ using Homework.Models;
 
 namespace Homework.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly EnumHelper _EnumHelper = new EnumHelper();
@@ -15,14 +16,14 @@ namespace Homework.Controllers
         {
             return View();
         }
-
+        
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
-
+        
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
@@ -30,6 +31,12 @@ namespace Homework.Controllers
             return View();
         }
 
+        //[Authorize(Users = "vip@test.com")]
+        public ActionResult EditButton()
+        {
+            return View();
+        }
+        
         public ActionResult List()
         {
             var skillTreeHomeworkEntities = new SkillTreeHomeworkEntities1();
@@ -50,7 +57,7 @@ namespace Homework.Controllers
             //888
             return View(moneyList);
         }
-
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Index([Bind(Include = "Category, Money, Date, Description")] MoneyList moneyList)
