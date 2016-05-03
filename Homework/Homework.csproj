@@ -197,8 +197,9 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Backend\Controllers\EditController.cs" />
+    <Compile Include="Areas\Backend\BackendAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\EditController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ValidateController.cs" />
@@ -268,6 +269,8 @@
     <Content Include="Models\AccountBookViewModel.edmx.diagram">
       <DependentUpon>AccountBookViewModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Backend\Views\web.config" />
+    <None Include="Areas\Backend\Views\Edit\EditPage.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -315,7 +318,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\List.cshtml" />
-    <Content Include="Views\Edit\EditPage.cshtml" />
     <None Include="Views\Home\EditButton.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -330,6 +332,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\Backend\Models\" />
+    <Folder Include="Areas\Backend\Views\Shared\" />
     <Folder Include="Views\Validate\" />
   </ItemGroup>
   <PropertyGroup>
