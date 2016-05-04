@@ -43,6 +43,7 @@ namespace Homework.Controllers
             int number = 1;
 
             var moneyList = skillTreeHomeworkEntities.AccountBooks.OrderByDescending(a => a.Dateee).Take(10).Select(a => new MoneyListDisplayModel()            {
+                Id = a.Id.ToString(),
                 CategoryDisplay = a.Categoryyy,
                 Money = a.Amounttt,
                 Date = a.Dateee
@@ -68,7 +69,7 @@ namespace Homework.Controllers
                 skillTreeHomeworkEntities.AccountBooks.Add(new AccountBook()
                 {
                     Id = Guid.NewGuid(),
-                    Categoryyy = Int32.Parse(moneyList.Category),
+                    Categoryyy = int.Parse(moneyList.Category),
                     Amounttt = (int)moneyList.Money,
                     Dateee = moneyList.Date,
                     Remarkkk = moneyList.Description

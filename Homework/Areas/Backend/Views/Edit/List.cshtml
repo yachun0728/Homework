@@ -1,0 +1,49 @@
+﻿@using Homework.Enums
+@model IEnumerable<Homework.Models.MoneyList>
+
+@{
+    Layout = null;
+}
+
+<table class="table">
+    <tr>
+        <th>#</th>
+        <th>類別</th>
+        <th>日期</th>
+        <th>金額</th>
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Number)
+                </td>
+                @ChangeTextColor(item.Category)
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Money)
+                </td>
+            </tr>
+        }
+    }
+</table>
+
+
+@helper ChangeTextColor(string category)
+{
+var textClass = "text-primary";
+if (category == "支出")
+{
+    textClass = "text-danger";
+}
+
+    <td class=@textClass>
+        @Html.DisplayFor(modelItem => category)
+    </td>
+}
+
+

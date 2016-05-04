@@ -11,7 +11,7 @@ namespace Homework.Models
 
         [Required]
         [DisplayFormat(DataFormatString = "{0:N0}")]
-        [Range(1,int.MaxValue)]
+        //[Range(1,int.MaxValue)]
         public decimal Money { get; set; }
 
         [Required]
@@ -23,8 +23,6 @@ namespace Homework.Models
         [Required]
         public string Description { get; set; }
 
-        [Required]
-        [MaxLength(100)]
         public int Number { get; set; }
     }
 }
